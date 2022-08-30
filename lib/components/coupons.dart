@@ -14,7 +14,7 @@ class Coupones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       width: MediaQuery.of(context).size.width * 0.95,
       height: MediaQuery.of(context).size.height * 0.3,
       decoration: BoxDecoration(

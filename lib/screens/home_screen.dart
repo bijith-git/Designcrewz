@@ -1,4 +1,5 @@
 import 'package:dctest/components/coupons.dart';
+import 'package:dctest/components/help_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -63,21 +64,72 @@ class _HomeScreenState extends State<HomeScreen> {
               img: "assets/coupons/25.svg",
               title: "25 Coupons",
             ),
+            const HelpBox()
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/icons/home.svg"), label: "Home"),
-        BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/icons/message.svg"), label: ""),
-        BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/icons/Order_list.svg"), label: ""),
-        BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/icons/track_Icon.svg"), label: ""),
-        BottomNavigationBarItem(
-            icon: SvgPicture.asset("assets/icons/profile.svg"), label: ""),
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+          showUnselectedLabels: true,
+          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.grey,
+          unselectedLabelStyle:
+              const TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+          selectedLabelStyle:
+              const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+          items: [
+            BottomNavigationBarItem(
+                backgroundColor: Colors.black,
+                icon: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                      color: Colors.green, shape: BoxShape.circle),
+                  child: SvgPicture.asset(
+                    "assets/icons/profile.svg",
+                    width: 30,
+                  ),
+                ),
+                label: "Profile"),
+            BottomNavigationBarItem(
+                icon: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                        color: Colors.green, shape: BoxShape.circle),
+                    child: SvgPicture.asset(
+                      "assets/icons/message.svg",
+                      width: 30,
+                    )),
+                label: "Message"),
+            BottomNavigationBarItem(
+                icon: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                        color: Colors.green, shape: BoxShape.circle),
+                    child: SvgPicture.asset(
+                      "assets/icons/home.svg",
+                      width: 30,
+                    )),
+                label: ""),
+            BottomNavigationBarItem(
+                icon: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                        color: Colors.green, shape: BoxShape.circle),
+                    child: SvgPicture.asset(
+                      "assets/icons/Order_list.svg",
+                      width: 30,
+                    )),
+                label: "Order"),
+            BottomNavigationBarItem(
+                icon: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                        color: Colors.green, shape: BoxShape.circle),
+                    child: SvgPicture.asset(
+                      "assets/icons/track_Icon.svg",
+                      width: 30,
+                    )),
+                label: "Track"),
+          ]),
     );
   }
 }
