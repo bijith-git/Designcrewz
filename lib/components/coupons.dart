@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -6,15 +7,16 @@ class Coupones extends StatelessWidget {
     Key? key,
     required this.img,
     required this.title,
+    required this.val,
   }) : super(key: key);
 
   final String img;
   final String title;
-
+  final int val;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 10, top: 10, bottom: 10),
+      padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10),
       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       width: MediaQuery.of(context).size.width * 0.95,
       height: MediaQuery.of(context).size.height * 0.3,
@@ -37,17 +39,17 @@ class Coupones extends StatelessWidget {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                Divider(
+                const Divider(
                   thickness: 100,
                   height: 10,
                   color: Colors.black,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   width: MediaQuery.of(context).size.width * .35,
-                  child: const Text(
-                    'You can book here for your coupons.And you can pay for it at the next delivery.100 coupons will be added to your account Once it is paid',
-                    style: TextStyle(fontSize: 12),
+                  child: Text(
+                    'You can book here for your coupons.And you can pay for it at the next delivery.${val} coupons will be added to your account Once it is paid',
+                    style: const TextStyle(fontSize: 12),
                     textAlign: TextAlign.justify,
                   ),
                 ),
