@@ -14,6 +14,7 @@ class Coupones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(right: 10, top: 10, bottom: 10),
       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       width: MediaQuery.of(context).size.width * 0.95,
       height: MediaQuery.of(context).size.height * 0.3,
@@ -36,23 +37,28 @@ class Coupones extends StatelessWidget {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                const Divider(
+                Divider(
+                  thickness: 100,
+                  height: 10,
                   color: Colors.black,
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.width * .3,
-                  width: MediaQuery.of(context).size.width * .3,
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  width: MediaQuery.of(context).size.width * .35,
                   child: const Text(
                     'You can book here for your coupons.And you can pay for it at the next delivery.100 coupons will be added to your account Once it is paid',
                     style: TextStyle(fontSize: 12),
                     textAlign: TextAlign.justify,
                   ),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: const Color(0xff943DC1),
                       borderRadius: BorderRadius.circular(10)),
                   alignment: Alignment.center,
                   child: const Text(

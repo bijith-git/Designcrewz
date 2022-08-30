@@ -14,9 +14,7 @@ class HelpBox extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-            ),
+            padding: const EdgeInsets.all(8.0),
             child: RichText(
                 text: const TextSpan(children: [
               TextSpan(
@@ -25,7 +23,12 @@ class HelpBox extends StatelessWidget {
                       color: Colors.green,
                       fontSize: 25,
                       fontWeight: FontWeight.bold)),
-              TextSpan(text: "Call Customer Care")
+              TextSpan(
+                  text: "Call Customer Care",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold))
             ])),
           ),
           Expanded(

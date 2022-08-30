@@ -13,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.of(context).orientation;
+    print(orientation);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -23,33 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 20, 20, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    "Coupon Booking",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Coupon Balance:75",
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 10,
-                    ),
-                  )
-                ],
-              ),
-            ),
+            CouponBalance(),
             Container(
+              // padding: EdgeInsets.symmetric(horizontal: 1, vertical: 2),
               width: MediaQuery.of(context).size.width * .6,
               color: Colors.grey,
             ),
-            const Divider(
+            Divider(
               color: Colors.grey,
             ),
             const Coupones(
@@ -82,7 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: const BoxDecoration(
-                      color: Colors.green, shape: BoxShape.circle),
+                      color: Color.fromARGB(255, 28, 33, 28),
+                      shape: BoxShape.circle),
                   child: SvgPicture.asset(
                     "assets/icons/profile.svg",
                     width: 30,
@@ -93,7 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                        color: Colors.green, shape: BoxShape.circle),
+                        color: Color.fromARGB(255, 28, 33, 28),
+                        shape: BoxShape.circle),
                     child: SvgPicture.asset(
                       "assets/icons/message.svg",
                       width: 30,
@@ -103,7 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                        color: Colors.green, shape: BoxShape.circle),
+                        color: Color.fromARGB(255, 28, 33, 28),
+                        shape: BoxShape.circle),
                     child: SvgPicture.asset(
                       "assets/icons/home.svg",
                       width: 30,
@@ -113,7 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                        color: Colors.green, shape: BoxShape.circle),
+                        color: Color.fromARGB(255, 28, 33, 28),
+                        shape: BoxShape.circle),
                     child: SvgPicture.asset(
                       "assets/icons/Order_list.svg",
                       width: 30,
@@ -123,13 +109,44 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                        color: Colors.green, shape: BoxShape.circle),
+                        color: Color.fromARGB(255, 28, 33, 28),
+                        shape: BoxShape.circle),
                     child: SvgPicture.asset(
                       "assets/icons/track_Icon.svg",
                       width: 30,
                     )),
                 label: "Track"),
           ]),
+    );
+  }
+}
+
+class CouponBalance extends StatelessWidget {
+  const CouponBalance({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10, 20, 20, 0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          Text(
+            "Coupon Booking",
+            style: TextStyle(
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "Coupon Balance:75",
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 13,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
