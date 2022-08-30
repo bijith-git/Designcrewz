@@ -26,13 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CouponBalance(),
+            const CouponBalance(),
             Container(
               // padding: EdgeInsets.symmetric(horizontal: 1, vertical: 2),
               width: MediaQuery.of(context).size.width * .6,
               color: Colors.grey,
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
             ),
             const Coupones(
@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+          landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
           showUnselectedLabels: true,
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.grey,
